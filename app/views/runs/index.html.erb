@@ -14,9 +14,8 @@
   </thead>
 
   <tbody>
-    <% @runs.each do |run| %>
+    <% @runs_all.each do |run| %>
       <tr>
-        <td><%= run.runs_week %></td>
         <td><%= run.miles %></td>
         <td><%= run.date_run %></td>
         <td><%= run.where %></td>
@@ -26,6 +25,12 @@
         <td><%= link_to 'Destroy', run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <tr>
+      <td><b><%= @runs_total_miles %></b></td>
+      <td></td>
+      <td></td>
+      <td><b><%= @runs_total_time %></b></td>
+    </tr>
   </tbody>
 </table>
 

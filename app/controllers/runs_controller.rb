@@ -4,7 +4,11 @@ class RunsController < ApplicationController
   # GET /runs
   # GET /runs.json
   def index
-    @runs = Run.all
+    @runs_week = Run.runs_week
+    @runs_month = Run.runs_month
+    @runs_total_miles = Run.total_miles
+    @runs_total_time = Run.total_time
+    @runs_all = Run.all
   end
 
   # GET /runs/1
