@@ -41,6 +41,14 @@
 
 <br />
 <br />
-<%= month_calendar attribute: :date_run do |date| %>
-  <%= date %>
+<%= month_calendar attribute: :date_run, events: @runs_all do |date, runs| %>
+  <div class="col-md-1">
+  <%= date.day %>
+
+  <% runs.each do |run|%>
+    <div>
+      <%= run.miles %>
+    </div>
+  <% end %>
+</div>
 <% end %>
