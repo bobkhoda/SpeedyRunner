@@ -1,48 +1,46 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Runs</h1>
-<div class = "table-responsive">
-<table class = "table table-hover mytable table-striped table-condensed">
-  <thead>
-    <tr>
-      <th>Miles</th>
-      <th>Date run</th>
-      <th>Where</th>
-      <th>Time run</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody class = "table table-hover">
-    <% @runs_all.each do |run| %>
+<div class = "runs">
+  <h1>Listing Runs</h1>
+  <div class = "table-responsive">
+    <table class = "table table-hover mytable table-striped table-condensed">
+    <thead>
       <tr>
-        <td><%= run.miles %></td>
-        <td><%= run.date_run %></td>
-        <td><%= run.where %></td>
-        <td><%= run.time_run %></td>
-        <td><%= link_to 'Show', run %></td>
-        <td><%= link_to 'Edit', edit_run_path(run) %></td>
-        <td><%= link_to 'Destroy', run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Miles</th>
+        <th>Date run</th>
+        <th>Where</th>
+        <th>Time run</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-    <tr>
-      <td><b><%= @runs_total_miles %></b></td>
-      <td></td>
-      <td></td>
-      <td><b><%= @runs_total_time %></b></td>
-    </tr>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody class = "table table-hover">
+      <% @runs_all.each do |run| %>
+        <tr>
+          <td><%= run.miles %></td>
+          <td><%= run.date_run %></td>
+          <td><%= run.where %></td>
+          <td><%= run.time_run %></td>
+          <td><%= link_to 'Show', run %></td>
+          <td><%= link_to 'Edit', edit_run_path(run) %></td>
+          <td><%= link_to 'Destroy', run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td><b><%= @runs_total_miles %></b></td>
+        <td></td>
+        <td></td>
+        <td><b><%= @runs_total_time %></b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <br />
+  <%= link_to "New Run", { action: "new" }, form_class: "new-thing" %>
 </div>
-
-<br>
-
-<%= link_to 'New Run', new_run_path %>
-
-<br />
-<br />
 <%= month_calendar attribute: :date_run, events: @runs_all do |date, runs| %>
-  <div class="col-md-1">
   <%= date.day %>
 
   <% runs.each do |run|%>
@@ -50,5 +48,4 @@
       <%= run.miles %>
     </div>
   <% end %>
-</div>
 <% end %>

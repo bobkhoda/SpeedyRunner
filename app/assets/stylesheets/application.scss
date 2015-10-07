@@ -15,9 +15,15 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+.runs{
+  padding: 2vw;
+}
 .simple-calendar {
-  .day {}
+  padding: 2vw;
+  .day {
+    height:10vw;
+    width:10vw;
+  }
 
   .wday-0 {}
   .wday-1 {}
@@ -27,15 +33,26 @@
   .wday-5 {}
   .wday-6 {}
 
-  .today {}
+  .today {
+    background-color: rgba(255, 47, 47, 0.21);
+  }
   .past {}
   .future {}
 
   .start-date {}
 
-  .prev-month {}
-  .next-month { }
-  .current-month {}
-
-  .has-events {}
+  .prev-month {
+    border: 1px solid #ddd;
+    background-color: #ECECEC;
+  }
+  .next-month {
+    border: 1px solid #ddd;
+    background-color: #ECECEC;
+  }
+  .current-month {
+    border: 1px solid #ddd;
+  }
+  .has-events {
+    background-color: rgba(86, 255, 55, 0.22);
+  }
 }
