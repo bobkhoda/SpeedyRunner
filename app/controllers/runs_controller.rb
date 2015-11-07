@@ -32,7 +32,7 @@ class RunsController < ApplicationController
 
     respond_to do |format|
       if @run.save
-        format.html { redirect_to @run, notice: 'Run was successfully created.' }
+        format.html { redirect_to runs_path, notice: 'Run was successfully created.' }
         format.json { render :show, status: :created, location: @run }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class RunsController < ApplicationController
   def update
     respond_to do |format|
       if @run.update(run_params)
-        format.html { redirect_to @run, notice: 'Run was successfully updated.' }
+        format.html { redirect_to runs_path, notice: 'Run was successfully updated.' }
         format.json { render :show, status: :ok, location: @run }
       else
         format.html { render :edit }
